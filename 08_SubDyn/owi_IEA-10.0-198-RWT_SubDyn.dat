@@ -1,0 +1,465 @@
+----------- SubDyn Substructure Input File ---------------------------
+Monopile foundation for FOOS project updated by OWI-Lab
+-------------------------- SIMULATION CONTROL -----------------------------------------
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+"DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
+             3   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
+True             SttcSolve   - Solve dynamics about static equilibrium point
+-------------------- FEA and CRAIG-BAMPTON PARAMETERS ---------------------------------
+             3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
+             1   NDiv        - Number of sub-elements per member
+             0   Nmodes      - Number of internal modes to retain. If Nmodes=0 --> Guyan Reduction. If Nmodes<0 --> retain all modes.
+             1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             0   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
+  0.000, 0.0106   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+             6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
+115                    NJoints     - Number of joints (-)
+  JointID    JointXss    JointYss    JointZss    JointType   JointDirX   JointDirY   JointDirZ  JointStiff      ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
+    (-)         (m)         (m)         (m)         (-)         (-)         (-)         (-)      (Nm/rad)  
+     1          0.0         0.0        -72.60        1          0.0         0.0         0.0         0.0    
+     2          0.0         0.0        -72.10        1          0.0         0.0         0.0         0.0    
+     3          0.0         0.0        -71.60        1          0.0         0.0         0.0         0.0    
+     4          0.0         0.0        -71.10        1          0.0         0.0         0.0         0.0    
+     5          0.0         0.0        -70.60        1          0.0         0.0         0.0         0.0    
+     6          0.0         0.0        -70.10        1          0.0         0.0         0.0         0.0    
+     7          0.0         0.0        -69.60        1          0.0         0.0         0.0         0.0    
+     8          0.0         0.0        -69.10        1          0.0         0.0         0.0         0.0    
+     9          0.0         0.0        -68.60        1          0.0         0.0         0.0         0.0    
+    10          0.0         0.0        -68.10        1          0.0         0.0         0.0         0.0    
+    11          0.0         0.0        -67.60        1          0.0         0.0         0.0         0.0    
+    12          0.0         0.0        -67.10        1          0.0         0.0         0.0         0.0    
+    13          0.0         0.0        -66.60        1          0.0         0.0         0.0         0.0    
+    14          0.0         0.0        -66.10        1          0.0         0.0         0.0         0.0    
+    15          0.0         0.0        -65.60        1          0.0         0.0         0.0         0.0    
+    16          0.0         0.0        -65.10        1          0.0         0.0         0.0         0.0    
+    17          0.0         0.0        -64.60        1          0.0         0.0         0.0         0.0    
+    18          0.0         0.0        -64.10        1          0.0         0.0         0.0         0.0    
+    19          0.0         0.0        -63.60        1          0.0         0.0         0.0         0.0    
+    20          0.0         0.0        -63.10        1          0.0         0.0         0.0         0.0    
+    21          0.0         0.0        -62.60        1          0.0         0.0         0.0         0.0    
+    22          0.0         0.0        -62.10        1          0.0         0.0         0.0         0.0    
+    23          0.0         0.0        -61.60        1          0.0         0.0         0.0         0.0    
+    24          0.0         0.0        -61.10        1          0.0         0.0         0.0         0.0    
+    25          0.0         0.0        -60.60        1          0.0         0.0         0.0         0.0    
+    26          0.0         0.0        -60.10        1          0.0         0.0         0.0         0.0    
+    27          0.0         0.0        -59.60        1          0.0         0.0         0.0         0.0    
+    28          0.0         0.0        -59.10        1          0.0         0.0         0.0         0.0    
+    29          0.0         0.0        -58.60        1          0.0         0.0         0.0         0.0    
+    30          0.0         0.0        -58.10        1          0.0         0.0         0.0         0.0    
+    31          0.0         0.0        -57.60        1          0.0         0.0         0.0         0.0    
+    32          0.0         0.0        -57.10        1          0.0         0.0         0.0         0.0    
+    33          0.0         0.0        -56.60        1          0.0         0.0         0.0         0.0    
+    34          0.0         0.0        -56.10        1          0.0         0.0         0.0         0.0    
+    35          0.0         0.0        -55.60        1          0.0         0.0         0.0         0.0    
+    36          0.0         0.0        -55.10        1          0.0         0.0         0.0         0.0    
+    37          0.0         0.0        -54.60        1          0.0         0.0         0.0         0.0    
+    38          0.0         0.0        -54.10        1          0.0         0.0         0.0         0.0    
+    39          0.0         0.0        -53.60        1          0.0         0.0         0.0         0.0    
+    40          0.0         0.0        -53.10        1          0.0         0.0         0.0         0.0    
+    41          0.0         0.0        -52.60        1          0.0         0.0         0.0         0.0    
+    42          0.0         0.0        -52.10        1          0.0         0.0         0.0         0.0    
+    43          0.0         0.0        -51.60        1          0.0         0.0         0.0         0.0    
+    44          0.0         0.0        -51.10        1          0.0         0.0         0.0         0.0    
+    45          0.0         0.0        -50.60        1          0.0         0.0         0.0         0.0    
+    46          0.0         0.0        -50.10        1          0.0         0.0         0.0         0.0    
+    47          0.0         0.0        -49.60        1          0.0         0.0         0.0         0.0    
+    48          0.0         0.0        -49.10        1          0.0         0.0         0.0         0.0    
+    49          0.0         0.0        -48.60        1          0.0         0.0         0.0         0.0    
+    50          0.0         0.0        -48.10        1          0.0         0.0         0.0         0.0    
+    51          0.0         0.0        -47.60        1          0.0         0.0         0.0         0.0    
+    52          0.0         0.0        -47.10        1          0.0         0.0         0.0         0.0    
+    53          0.0         0.0        -46.60        1          0.0         0.0         0.0         0.0    
+    54          0.0         0.0        -46.10        1          0.0         0.0         0.0         0.0    
+    55          0.0         0.0        -45.60        1          0.0         0.0         0.0         0.0    
+    56          0.0         0.0        -45.10        1          0.0         0.0         0.0         0.0    
+    57          0.0         0.0        -44.60        1          0.0         0.0         0.0         0.0    
+    58          0.0         0.0        -44.10        1          0.0         0.0         0.0         0.0    
+    59          0.0         0.0        -43.60        1          0.0         0.0         0.0         0.0    
+    60          0.0         0.0        -43.10        1          0.0         0.0         0.0         0.0    
+    61          0.0         0.0        -42.60        1          0.0         0.0         0.0         0.0    
+    62          0.0         0.0        -42.10        1          0.0         0.0         0.0         0.0    
+    63          0.0         0.0        -41.60        1          0.0         0.0         0.0         0.0    
+    64          0.0         0.0        -41.10        1          0.0         0.0         0.0         0.0    
+    65          0.0         0.0        -40.60        1          0.0         0.0         0.0         0.0    
+    66          0.0         0.0        -40.10        1          0.0         0.0         0.0         0.0    
+    67          0.0         0.0        -39.60        1          0.0         0.0         0.0         0.0    
+    68          0.0         0.0        -39.10        1          0.0         0.0         0.0         0.0    
+    69          0.0         0.0        -38.60        1          0.0         0.0         0.0         0.0    
+    70          0.0         0.0        -38.10        1          0.0         0.0         0.0         0.0    
+    71          0.0         0.0        -37.60        1          0.0         0.0         0.0         0.0    
+    72          0.0         0.0        -37.10        1          0.0         0.0         0.0         0.0    
+    73          0.0         0.0        -36.60        1          0.0         0.0         0.0         0.0    
+    74          0.0         0.0        -36.10        1          0.0         0.0         0.0         0.0    
+    75          0.0         0.0        -35.60        1          0.0         0.0         0.0         0.0    
+    76          0.0         0.0        -35.10        1          0.0         0.0         0.0         0.0    
+    77          0.0         0.0        -34.60        1          0.0         0.0         0.0         0.0    
+    78          0.0         0.0        -34.10        1          0.0         0.0         0.0         0.0    
+    79          0.0         0.0        -33.60        1          0.0         0.0         0.0         0.0    
+    80          0.0         0.0        -33.10        1          0.0         0.0         0.0         0.0    
+    81          0.0         0.0        -32.60        1          0.0         0.0         0.0         0.0    
+    82          0.0         0.0        -32.10        1          0.0         0.0         0.0         0.0    
+    83          0.0         0.0        -31.60        1          0.0         0.0         0.0         0.0    
+    84          0.0         0.0        -31.10        1          0.0         0.0         0.0         0.0    
+    85          0.0         0.0        -30.60        1          0.0         0.0         0.0         0.0    
+    86          0.0         0.0        -30.10        1          0.0         0.0         0.0         0.0    
+    87          0.0         0.0        -30.00        1          0.0         0.0         0.0         0.0    
+    88          0.0         0.0        -29.50        1          0.0         0.0         0.0         0.0    
+    89          0.0         0.0        -29.00        1          0.0         0.0         0.0         0.0    
+    90          0.0         0.0        -28.50        1          0.0         0.0         0.0         0.0    
+    91          0.0         0.0        -28.00        1          0.0         0.0         0.0         0.0    
+    92          0.0         0.0        -27.50        1          0.0         0.0         0.0         0.0    
+    93          0.0         0.0        -27.00        1          0.0         0.0         0.0         0.0    
+    94          0.0         0.0        -26.50        1          0.0         0.0         0.0         0.0    
+    95          0.0         0.0        -26.00        1          0.0         0.0         0.0         0.0    
+    96          0.0         0.0        -25.50        1          0.0         0.0         0.0         0.0    
+    97          0.0         0.0        -25.00        1          0.0         0.0         0.0         0.0    
+    98          0.0         0.0        -24.50        1          0.0         0.0         0.0         0.0    
+    99          0.0         0.0        -24.00        1          0.0         0.0         0.0         0.0    
+   100          0.0         0.0        -23.50        1          0.0         0.0         0.0         0.0    
+   101          0.0         0.0        -23.35        1          0.0         0.0         0.0         0.0    
+   102          0.0         0.0        -22.00        1          0.0         0.0         0.0         0.0    
+   103          0.0         0.0        -18.00        1          0.0         0.0         0.0         0.0    
+   104          0.0         0.0        -14.00        1          0.0         0.0         0.0         0.0    
+   105          0.0         0.0        -10.00        1          0.0         0.0         0.0         0.0    
+   106          0.0         0.0         -8.00        1          0.0         0.0         0.0         0.0    
+   107          0.0         0.0         -6.00        1          0.0         0.0         0.0         0.0    
+   108          0.0         0.0         -4.00        1          0.0         0.0         0.0         0.0    
+   109          0.0         0.0         -2.00        1          0.0         0.0         0.0         0.0    
+   110          0.0         0.0          0.00        1          0.0         0.0         0.0         0.0    
+   111          0.0         0.0          2.00        1          0.0         0.0         0.0         0.0    
+   112          0.0         0.0          4.00        1          0.0         0.0         0.0         0.0    
+   113          0.0         0.0          6.00        1          0.0         0.0         0.0         0.0    
+   114          0.0         0.0          8.00        1          0.0         0.0         0.0         0.0    
+   115          0.0         0.0         10.00        1          0.0         0.0         0.0         0.0    
+------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
+             100   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     SSIfile ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)      (string)
+  1          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_1.txt"
+  2          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_2.txt"
+  3          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_3.txt"
+  4          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_4.txt"
+  5          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_5.txt"
+  6          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_6.txt"
+  7          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_7.txt"
+  8          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_8.txt"
+  9          0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_9.txt"
+  10         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_10.txt"
+  11         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_11.txt"
+  12         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_12.txt"
+  13         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_13.txt"
+  14         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_14.txt"
+  15         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_15.txt"
+  16         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_16.txt"
+  17         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_17.txt"
+  18         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_18.txt"
+  19         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_19.txt"
+  20         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_20.txt"
+  21         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_21.txt"
+  22         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_22.txt"
+  23         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_23.txt"
+  24         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_24.txt"
+  25         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_25.txt"
+  26         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_26.txt"
+  27         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_27.txt"
+  28         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_28.txt"
+  29         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_29.txt"
+  30         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_30.txt"
+  31         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_31.txt"
+  32         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_32.txt"
+  33         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_33.txt"
+  34         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_34.txt"
+  35         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_35.txt"
+  36         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_36.txt"
+  37         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_37.txt"
+  38         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_38.txt"
+  39         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_39.txt"
+  40         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_40.txt"
+  41         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_41.txt"
+  42         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_42.txt"
+  43         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_43.txt"
+  44         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_44.txt"
+  45         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_45.txt"
+  46         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_46.txt"
+  47         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_47.txt"
+  48         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_48.txt"
+  49         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_49.txt"
+  50         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_50.txt"
+  51         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_51.txt"
+  52         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_52.txt"
+  53         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_53.txt"
+  54         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_54.txt"
+  55         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_55.txt"
+  56         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_56.txt"
+  57         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_57.txt"
+  58         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_58.txt"
+  59         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_59.txt"
+  60         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_60.txt"
+  61         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_61.txt"
+  62         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_62.txt"
+  63         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_63.txt"
+  64         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_64.txt"
+  65         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_65.txt"
+  66         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_66.txt"
+  67         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_67.txt"
+  68         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_68.txt"
+  69         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_69.txt"
+  70         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_70.txt"
+  71         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_71.txt"
+  72         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_72.txt"
+  73         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_73.txt"
+  74         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_74.txt"
+  75         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_75.txt"
+  76         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_76.txt"
+  77         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_77.txt"
+  78         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_78.txt"
+  79         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_79.txt"
+  80         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_80.txt"
+  81         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_81.txt"
+  82         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_82.txt"
+  83         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_83.txt"
+  84         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_84.txt"
+  85         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_85.txt"
+  86         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_86.txt"
+  87         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_87.txt"
+  88         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_88.txt"
+  89         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_89.txt"
+  90         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_90.txt"
+  91         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_91.txt"
+  92         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_92.txt"
+  93         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_93.txt"
+  94         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_94.txt"
+  95         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_95.txt"
+  96         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_96.txt"
+  97         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_97.txt"
+  98         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_98.txt"
+  99         0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_99.txt"
+  100        0           0           0           0           0           0           "ssi/IEA-10.0-198-RWT_pisa_JointID_100.txt"
+------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
+             1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+  115           1           1           1           1           1           1     
+----------------------------------- MEMBERS -------------------------------------------
+           114   NMembers    - Number of members (-)
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  COSMID   ![MType={1:beam circ., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
+  (-)         (-)         (-)          (-)           (-)        (-)    (-)
+    1           1           2           1           1            1      -1
+    2           2           3           1           1            1      -1
+    3           3           4           1           1            1      -1
+    4           4           5           1           1            1      -1
+    5           5           6           1           1            1      -1
+    6           6           7           1           1            1      -1
+    7           7           8           1           1            1      -1
+    8           8           9           1           1            1      -1
+    9           9          10           1           1            1      -1
+   10          10          11           1           1            1      -1
+   11          11          12           1           1            1      -1
+   12          12          13           1           1            1      -1
+   13          13          14           1           1            1      -1
+   14          14          15           1           1            1      -1
+   15          15          16           1           1            1      -1
+   16          16          17           1           1            1      -1
+   17          17          18           1           1            1      -1
+   18          18          19           1           1            1      -1
+   19          19          20           1           1            1      -1
+   20          20          21           1           1            1      -1
+   21          21          22           1           1            1      -1
+   22          22          23           1           1            1      -1
+   23          23          24           1           1            1      -1
+   24          24          25           1           1            1      -1
+   25          25          26           1           1            1      -1
+   26          26          27           1           1            1      -1
+   27          27          28           1           1            1      -1
+   28          28          29           1           1            1      -1
+   29          29          30           1           1            1      -1
+   30          30          31           1           1            1      -1
+   31          31          32           1           1            1      -1
+   32          32          33           1           1            1      -1
+   33          33          34           1           1            1      -1
+   34          34          35           1           1            1      -1
+   35          35          36           1           1            1      -1
+   36          36          37           1           1            1      -1
+   37          37          38           1           1            1      -1
+   38          38          39           1           1            1      -1
+   39          39          40           1           1            1      -1
+   40          40          41           1           1            1      -1
+   41          41          42           1           1            1      -1
+   42          42          43           1           1            1      -1
+   43          43          44           1           1            1      -1
+   44          44          45           1           1            1      -1
+   45          45          46           1           1            1      -1
+   46          46          47           1           1            1      -1
+   47          47          48           1           1            1      -1
+   48          48          49           1           1            1      -1
+   49          49          50           1           1            1      -1
+   50          50          51           1           1            1      -1
+   51          51          52           1           1            1      -1
+   52          52          53           1           1            1      -1
+   53          53          54           1           1            1      -1
+   54          54          55           1           1            1      -1
+   55          55          56           1           1            1      -1
+   56          56          57           1           1            1      -1
+   57          57          58           1           1            1      -1
+   58          58          59           1           1            1      -1
+   59          59          60           1           1            1      -1
+   60          60          61           1           1            1      -1
+   61          61          62           1           1            1      -1
+   62          62          63           1           1            1      -1
+   63          63          64           1           1            1      -1
+   64          64          65           1           1            1      -1
+   65          65          66           1           1            1      -1
+   66          66          67           1           1            1      -1
+   67          67          68           1           1            1      -1
+   68          68          69           1           1            1      -1
+   69          69          70           1           1            1      -1
+   70          70          71           1           1            1      -1
+   71          71          72           1           1            1      -1
+   72          72          73           1           1            1      -1
+   73          73          74           1           1            1      -1
+   74          74          75           1           1            1      -1
+   75          75          76           1           1            1      -1
+   76          76          77           1           1            1      -1
+   77          77          78           1           1            1      -1
+   78          78          79           1           1            1      -1
+   79          79          80           1           1            1      -1
+   80          80          81           1           1            1      -1
+   81          81          82           1           1            1      -1
+   82          82          83           1           1            1      -1
+   83          83          84           1           1            1      -1
+   84          84          85           1           1            1      -1
+   85          85          86           1           1            1      -1
+   86          86          87           1           1            1      -1
+   87          87          88           1           1            1      -1
+   88          88          89           1           1            1      -1
+   89          89          90           1           1            1      -1
+   90          90          91           1           1            1      -1
+   91          91          92           1           1            1      -1
+   92          92          93           1           1            1      -1
+   93          93          94           1           1            1      -1
+   94          94          95           1           1            1      -1
+   95          95          96           1           1            1      -1
+   96          96          97           1           1            1      -1
+   97          97          98           1           1            1      -1
+   98          98          99           1           1            1      -1
+   99          99         100           1           1            1      -1
+  100         100         101           1           1            1      -1
+  101         101         102           6           6            1      -1
+  102         102         103           7           7            1      -1
+  103         103         104           8           8            1      -1
+  104         104         105           9           9            1      -1
+  105         105         106          10          10            1      -1
+  106         106         107          11          11            1      -1
+  107         107         108          12          12            1      -1
+  108         108         109          13          13            1      -1
+  109         109         110          14          14            1      -1
+  110         110         111          15          15            1      -1
+  111         111         112          16          16            1      -1
+  112         112         113          17          17            1      -1
+  113         113         114          18          18            1      -1
+  114         114         115          19          19            1      -1
+------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
+             19   NPropSets   - Number of structurally unique cross-sections
+PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
+     1      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     2      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     3      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     4      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     5      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     6      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     7      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     8      2.100000e+11 8.076923e+10   8500.0        9.0         0.1    
+     9      2.100000e+11 8.076923e+10   8500.0        9.0        0.13    
+    10      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    11      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    12      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    13      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    14      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    15      2.100000e+11 8.076923e+10   8500.0        9.0        0.16    
+    16      2.100000e+11 8.076923e+10   8500.0        9.0        0.155   
+    17      2.100000e+11 8.076923e+10   8500.0        9.0        0.15    
+    18      2.100000e+11 8.076923e+10   8500.0        9.0        0.15    
+    19      2.100000e+11 8.076923e+10   8500.0        9.0        0.15
+----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
+             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy        XsecJ0
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
+-------------------------- CABLE PROPERTIES -------------------------------------------
+             0   NCablePropSets   - Number of cable cable properties
+PropSetID     EA          MatDens        T0         CtrlChannel
+  (-)         (N)         (kg/m)        (N)             (-)
+----------------------- RIGID LINK PROPERTIES -----------------------------------------
+             0   NRigidPropSets - Number of rigid link properties
+PropSetID   MatDens   
+  (-)       (kg/m)
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66    
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
+  ---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
+0                      NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+  COSMID      COSM11      COSM12      COSM13      COSM21      COSM22      COSM23      COSM31      COSM32      COSM33   
+    (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
+------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
+1                      NCmass      - Number of joints with concentrated masses; Global Coordinate System
+CMJointID     JMass       JMXX        JMYY        JMZZ        JMXY        JMXZ        JMYZ        MCGX        MCGY        MCGZ    
+   (-)        (kg)      (kg*m^2)    (kg*m^2)    (kg*m^2)    (kg*m^2)    (kg*m^2)    (kg*m^2)       (m)         (m)         (m)    
+  115       0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0         0.0
+---------------------------- OUTPUT: SUMMARY & OUTFILE ------------------------------
+True                  SumPrint    - Output a Summary File (flag).It contains: matrices K,M  and C-B reduced M_BB, M-BM, K_BB, K_MM(OMG^2), PHI_R, PHI_L. It can also contain COSMs if requested.
+0                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
+False                  OutCOSM     - Output cosine matrices with the selected output member forces (flag)
+False                  OutAll      - [T/F] Output all members' end forces
+2                      OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
+True                   TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
+1                      OutDec      - Decimation of output in the <rootname>.SD.out file
+ES11.4e2               OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+A11                    OutSFmt     - Output format for header strings in the <rootname>.SD.out file
+------------------------- MEMBER OUTPUT LIST ------------------------------------------
+9                      NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
+ MemberID     NOutCnt     NodeCnt   ! [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+    (-)         (-)         (-)    
+     1           1           1     
+     25          1           1     
+     50          1           1     
+     75          1           1     
+    100          1           1     
+    103          1           1     
+    107          1           1     
+    111          1           1     
+    114          1           2     
+------------------------- SDOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"ReactFXss"
+"ReactFYss"
+"ReactFZss"
+"ReactMXss" 
+"ReactMYss"
+"ReactMZss"
+"IntfFXss" 
+"IntfFYss"
+"IntfFZss"
+"IntfMXss"
+"IntfMYss"
+"IntfMZss"
+"IntfTDXss"
+"IntfTDYss"
+"IntfTDZss"
+"IntfRDXss"
+"IntfRDYss"
+"IntfRDZss"
+"IntfTAXss"
+"IntfTAYss" 
+"IntfTAZss"
+"IntfRAXss" 
+"IntfRAYss" 
+"IntfRAZss"
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
