@@ -15,6 +15,21 @@ Model modifications deal with subsoilconditions, to be adapted to a representati
 The soil lateral reaction is modeled using distributed lateral springs along the embedded length of the monopile. Several model variations are implemented to reflect different soil–structure interaction (SSI) frameworks, each used to derive the corresponding *p–y curves*. The model assumes initial (i.e., small-strain) soil stiffness values, as **SubDyn** in OpenFAST only supports linear elastic soil springs. Soil springs are defined
 each 0.5 m. 
 
+### Conventional p-y APIrp2geo 
+
+[![Version: Beta](https://img.shields.io/badge/Version-Beta-blue)](https://github.com/yourusername/repo)
+
+- The [APIrp2geo model](apirp2geo/) implements the conventional p-y curves according 
+to the American Petroleum Institute (API) recommended practice.
+- The assumed lateral stiffness profile used to represent the soil reaction—accounting for both soil properties and monopile diameter—is provided in [API p-y stiffness data (csv)](Foundation%20stiffness/api_py.csv).
+
+### Kallehave modification p-y APIrp2geo (SANDS)  
+
+[![Version: Beta](https://img.shields.io/badge/Version-Beta-blue)](https://github.com/yourusername/repo)
+
+- The [Kallehave modification APIrp2geo model](apiKallehave/) implements the modified p-y curves in sands based on the correction proposed by [Kallehave](https://onepetro.org/SUTOSIG/proceedings-abstract/OSIG12/All-OSIG12/SUT-OSIG-12-50/3358).
+- The assumed lateral stiffness profile used to represent the soil reaction—accounting for both soil properties and monopile diameter—is provided in [Kallehave API p-y stiffness data (csv)](Foundation%20stiffness/api_pyKallehave.csv).
+
 ### PISA rule based-method
 
 [![Version: Beta](https://img.shields.io/badge/Version-Beta-blue)](https://github.com/yourusername/repo)
@@ -22,3 +37,4 @@ each 0.5 m.
 - The [PISA model](pisa/) implements the soil reaction curves according to the
 PISA rule-based method.
 - The assumed lateral and rotational stiffness profile used to represent the soil reaction—accounting for both soil properties and monopile diameter—is provided in [PISA stiffness data (csv)](Foundation%20stiffness/pisa.csv).
+- The stiffness profile is also provided in [tabulated form](Foundation%20stiffness/pisa_opensees.csv) to serve as input for our current in-house numerical framework.
